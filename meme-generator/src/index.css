@@ -7,6 +7,8 @@ body{
   display: flex;
 }
 
+/* header */
+
 .header-container{
   display: flex;
   justify-content: space-around;
@@ -43,4 +45,35 @@ body{
   font-family: 'Inter', sans-serif;
   color: white;
   margin-right: 20px;
+}
+
+
+/* meme form and button  */
+
+.meme-input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid yellow;
+  /* max-width: 70%; */
+}
+
+#root>.meme-input-container{
+  align-items: center;
+  justify-content: center;
+}
+
+.text-input-container>input{
+  width: 350px;
+  height: 35px;
+  margin: 10px 15px;
+}
+
+.text-input-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  min-height: 50px;
+
 }
