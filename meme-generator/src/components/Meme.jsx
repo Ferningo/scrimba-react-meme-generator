@@ -1,12 +1,20 @@
+import memesData from "../memesData"
+
 function Meme(){
+
+    function getRandomMemeURL(){
+        const randomNumber = Math.floor((Math.random() * 100));
+        const memeURL = memesData.data.memes[randomNumber].url
+        console.log(memeURL)
+    }
+
     function handleOnClick(){
-        console.log('Click!')
+        getRandomMemeURL()
     }
 
     function handleOnHover(){
         console.log('Mouse Hovering!')
     }
-
 
     return(
         <div className="meme-input-container">
@@ -23,7 +31,6 @@ function Meme(){
                     Get a new meme image! 🖼️
             </button>
         </div>
-
     )
 }
 
