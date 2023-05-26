@@ -2,10 +2,10 @@ function Meme(){
     return(
         <div className="meme-input-container">
             <div className="text-input-container">
-                <input type="text" />
+                <input className="text-input" type="text" />
                 <input type="text" />
             </div>
-            <input className="generate-meme-button" type="button" />
+            <button className="generate-meme-button">Get a new meme image!</button>
         </div>
 
     )

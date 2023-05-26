@@ -1,6 +1,6 @@
 body{
   margin: 0;
-  background-color: darkolivegreen;
+  background-color: #E5E5E5;;
 }
 
 #id{
@@ -54,8 +54,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid yellow;
-  /* max-width: 70%; */
+  margin-top: 50px;
 }
 
 #root>.meme-input-container{
@@ -64,6 +63,13 @@ body{
 }
 
 .text-input-container>input{
+  border: 1px solid #D5D4D8;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
   width: 350px;
   height: 35px;
   margin: 10px 15px;
@@ -75,5 +81,18 @@ body{
   justify-content: center;
   flex-grow: 1;
   min-height: 50px;
-
 }
+
+.generate-meme-button{
+  margin-top: 10px;
+  min-width: 41.5%;
+  height: 40px;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  border-radius: 5px;
+  color: white;
+  border: none;
+  font-family: 'Karla';
+  font-style: normal;
+  font-size: 22px;
+}
+
