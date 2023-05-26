@@ -1,6 +1,10 @@
 function Header(){
     return(
-        <h1>Header goes here</h1>
+        <div className="header-container">
+            <p>Elem 1</p>
+            <p>Elem 2</p>
+            <p>Elem 3</p>
+        </div>
     )
 }
 
