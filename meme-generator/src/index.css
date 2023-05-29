@@ -98,3 +98,20 @@ body{
   cursor: pointer;
 }
 
+/* image and image container */
+
+.image-container{
+  display: flex;
+  margin-top: 15px;
+  border: solid #000000;
+  justify-content: center;
+  align-items: center;
+  /* max-width: 41.5%; */
+}
+
+.image{
+  min-width: 1200px;
+  min-height: 700px;
+  max-width: 1200px;
+  max-height: 700px;
+}

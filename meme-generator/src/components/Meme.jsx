@@ -1,19 +1,18 @@
 import memesData from "../memesData"
+import React from 'react'
 
 function Meme(){
+
+    const [imageURL,setImageURL] = React.useState("")
 
     function getRandomMemeURL(){
         const randomNumber = Math.floor((Math.random() * 100));
         const memeURL = memesData.data.memes[randomNumber].url
-        console.log(memeURL)
+        return memeURL
     }
 
     function handleOnClick(){
-        getRandomMemeURL()
-    }
-
-    function handleOnHover(){
-        console.log('Mouse Hovering!')
+        setImageURL(getRandomMemeURL())
     }
 
     return(
@@ -25,11 +24,12 @@ function Meme(){
             <button 
                 className="generate-meme-button"
                 onClick={handleOnClick}
-                onMouseOver={handleOnHover}
                 >
-                
                     Get a new meme image! 🖼️
             </button>
+            <div className="image-container">
+                <img className="image" src={imageURL} alt="" />
+            </div>
         </div>
     )
 }
