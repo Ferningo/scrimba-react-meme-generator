@@ -3,17 +3,30 @@ import React from 'react'
 
 function Meme(){
 
-    const [imageURL,setImageURL] = React.useState("")
+    const[meme,setMeme] = React.useState({
+        topText: '',
+        bottomText: '',
+        memeImage: 'https://i.imgflip.com/345v97.jpg'
+    })
 
-    function getRandomMemeURL(){
-        const randomNumber = Math.floor((Math.random() * 100));
-        const memeURL = memesData.data.memes[randomNumber].url
-        return memeURL
-    }
+    const [allMemeImages,setAllMemeImages] = React.useState(memesData.data.memes)
 
     function handleOnClick(){
-        setImageURL(getRandomMemeURL())
+        let randomNumber = Math.floor(Math.random() * allMemeImages.length)
+        let randomImage = allMemeImages[randomNumber].url
+        setMeme(prevMeme => {
+            return{
+                ...prevMeme,
+                memeImage: randomImage
+            }
+        })
+         
+
     }
+
+
+
+
 
     return(
         <div className="meme-input-container">
@@ -28,7 +41,7 @@ function Meme(){
                     Get a new meme image! 🖼️
             </button>
             <div className="image-container">
-                <img className="image" src={imageURL} alt="" />
+                <img className="image" src={meme.memeImage} alt="" />
             </div>
         </div>
     )
