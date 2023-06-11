@@ -101,11 +101,11 @@ body{
 /* image and image container */
 
 .image-container{
-  display: flex;
+  position: relative;
   margin-top: 15px;
   border: solid #000000;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   /* max-width: 41.5%; */
 }
 
@@ -114,4 +114,38 @@ body{
   min-height: 400px;
   max-width: 1200px;
   max-height: 700px;
+}
+
+
+.meme-text{
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 4em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0 2px 0 #000,
+      2px 0 0 #000,
+      0 -2px 0 #000,
+      -2px 0 0 #000,
+      2px 2px 5px #000;
+}
+
+.top{
+  top: 0;
+}
+
+.bottom{
+  bottom: 0;
 }

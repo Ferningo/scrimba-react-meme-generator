@@ -25,9 +25,6 @@ function Meme(){
     }
 
 
-
-
-
     return(
         <div className="meme-input-container">
             <div className="text-input-container">
@@ -41,6 +38,8 @@ function Meme(){
                     Get a new meme image! 🖼️
             </button>
             <div className="image-container">
+                <h2 className="meme-text top">Upper text</h2>
+                <h2 className="meme-text bottom">Bottom text</h2>
                 <img className="image" src={meme.memeImage} alt="" />
             </div>
         </div>
