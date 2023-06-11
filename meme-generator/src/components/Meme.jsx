@@ -4,8 +4,8 @@ import React from 'react'
 function Meme(){
 
     const[meme,setMeme] = React.useState({
-        topText: '',
-        bottomText: '',
+        topText: 'Top text',
+        bottomText: 'Bottom text',
         memeImage: 'https://i.imgflip.com/345v97.jpg'
     })
 
@@ -20,7 +20,16 @@ function Meme(){
                 memeImage: randomImage
             }
         })
-         
+    }
+
+    function handleOnChange(event){
+        const {name,value} = event.target
+        setMeme( prevMemeData => {
+            return{
+                ...prevMemeData,
+                [name] : value,
+            }
+        })
 
     }
 
@@ -28,8 +37,19 @@ function Meme(){
     return(
         <div className="meme-input-container">
             <div className="text-input-container">
-                <input className="text-input" type="text" placeholder="top text" />
-                <input type="text"   placeholder="bottom text"/>
+                <input
+                    type="text" 
+                    className="text-input"
+                    placeholder="top text"
+                    name="topText"
+                    onChange={handleOnChange}
+                 />
+                <input 
+                    type="text"
+                    placeholder="bottom text"
+                    name="bottomText"
+                    onChange={handleOnChange}
+                />
             </div>
             <button 
                 className="generate-meme-button"
@@ -38,8 +58,8 @@ function Meme(){
                     Get a new meme image! 🖼️
             </button>
             <div className="image-container">
-                <h2 className="meme-text top">Upper text</h2>
-                <h2 className="meme-text bottom">Bottom text</h2>
+                <h2 className="meme-text top">{meme.topText}</h2>
+                <h2 className="meme-text bottom">{meme.bottomText}</h2>
                 <img className="image" src={meme.memeImage} alt="" />
             </div>
         </div>
