@@ -4,12 +4,20 @@ import React from 'react'
 function Meme(){
 
     const[meme,setMeme] = React.useState({
-        topText: 'Top text',
-        bottomText: 'Bottom text',
+        topText: '',
+        bottomText: '',
         memeImage: 'https://i.imgflip.com/345v97.jpg'
     })
 
-    const [allMemeImages,setAllMemeImages] = React.useState(memesData.data.memes)
+    const [allMemeImages,setAllMemeImages] = React.useState([])
+
+
+    React.useEffect(() => {
+        fetch('https://api.imgflip.com/get_memes')
+            .then(res => res.json())
+            .then(res => setAllMemeImages(res.data.memes))
+    },[])
+
 
     function handleOnClick(){
         let randomNumber = Math.floor(Math.random() * allMemeImages.length)
@@ -30,7 +38,6 @@ function Meme(){
                 [name] : value,
             }
         })
-
     }
 
 
@@ -43,12 +50,14 @@ function Meme(){
                     placeholder="top text"
                     name="topText"
                     onChange={handleOnChange}
+                    value={meme.topText}
                  />
                 <input 
                     type="text"
                     placeholder="bottom text"
                     name="bottomText"
                     onChange={handleOnChange}
+                    value={meme.bottomText}
                 />
             </div>
             <button 
